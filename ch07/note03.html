@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Angular momentum of many-electron atoms &#8212; Quantum Mechanics for Chemistry</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/base.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/custom.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch07/note03';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Atomic terms and selection rules" href="note04.html" />
+    <link rel="prev" title="Pauli exclusion principle" href="note02.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/cat.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/cat.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch01/index.html">1.  Intro to Quantum Mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch01/note01.html">Why Quantum mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch01/note02.html">The need for quantization</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch01/note03.html">Photoelectric effect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch01/note04.html">Wave-particle duality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch01/BlackBody.html">DEMO: Black Body radiation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch02/index.html">2. Waves and wave equation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/note01.html">Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch02/note02.html">Wave equation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch03/index.html">3. Schordinger Equation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/note01.html">Schrödinger Equation</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch03/note02.html">Postulates of Quantum Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/note03.html">Wave function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/note04.html">Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/note05.html">Eigenvalues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch03/note06.html">Time dependence</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch03/note07.html">Commutability and precision of measurement</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch04/index.html">4. Model systems</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note01.html">Molecular degrees of freedom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note02.html">Particle in a 3D box</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note03A.html">Harmonic Oscillator</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note03B.html">Vibrational spectra of diatomic molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note03C.html">Beyond harmonic oscillator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note04A.html">Angular momentum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note04B.html">Rigid Rotor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note04C.html">Rotational spectra of diatomic molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04/note05.html">Vibration-rotation spectra of diatomic molecules</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch05/index.html">5. Hydrogen Atom</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/note01.html">Hydrogenlike atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/note02.html">Spectrum of hydrogenlike atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/note03.html">Probability densities for hydrogenlike atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/note04.html">Orbital angular momentum of the hydrogen atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch05/note05.html">Spin</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch06/index.html">6. Approximations</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/note01.html">Perturbation Method</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../ch06/note02.html">Variational Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch06/note03.html">Linear variational method</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">7. Multielectron atoms</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="note01.html">Helium atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="note02.html">Pauli exclusion principle</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Angular momentum of many-electron atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="note04.html">Atomic terms and selection rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ch08/index.html">8. Molecules</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note01.html">BO approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note02.html">The hydrogen molecule ion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note03.html">Energy of the hydrogen molecule ion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note05.html">Electron configurations of homonuclear diatomic molecules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note06.html">Electronic structure of polyatomic molecules: the valece bond method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note07.html">Huckel molecular orbital theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note08.html">Dipole moments and ionic bonding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch08/note09.html">Intermolecular forces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Scratchpad</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra stuff</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../math/index.html">Math</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../math/note01.html">Integrals</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../math/note02.html">Differentiation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/note03.html">QM overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/note04.html">Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../math/note05.html">Complex numbers</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../demos/index.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demos/intro2py.html">Python3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/intro2numpy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/intro2viz.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/animation.html">Animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../demos/sympy.html">Sympy</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ch07/note03.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Angular momentum of many-electron atoms</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-orbital-angular-momentum-in-a-many-electron-atom">Total orbital angular momentum in a many-electron atom.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-spin-angular-momentum-in-many-electron-atom">Total spin angular momentum in many-electron atom.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-total-angular-momentum-combined-orbital-and-spin">The total angular momentum (combined orbital and spin).</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="angular-momentum-of-many-electron-atoms">
+<h1>Angular momentum of many-electron atoms<a class="headerlink" href="#angular-momentum-of-many-electron-atoms" title="Permalink to this heading">#</a></h1>
+<p>In many-electron atoms, each electron has both orbital and spin angular momenta. First, for simplicity, consider only the \textit{total} orbital angular momentum operator:</p>
+<div class="math notranslate nohighlight">
+\[{\hat{L} = \sum\limits_{i=1}^{N} \hat{l}_i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of electrons and <span class="math notranslate nohighlight">\(\hat{l}_i\)</span> is the angular momentum operator for electron <span class="math notranslate nohighlight">\(i\)</span>. The projection operator along the <span class="math notranslate nohighlight">\(z\)</span>-axis is then given by:</p>
+<div class="math notranslate nohighlight">
+\[{\hat{L}_z = \sum\limits_{i=1}^{N} \hat{l}_{z,i}}\]</div>
+<div class="math notranslate nohighlight">
+\[{M_L = \sum\limits_{i=1}^{N}m_i}\]</div>
+<p>Vector model for adding 3 angular momenta:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\vec{L}\)</span> = Total orbital angular momentum.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\vec{l}_1, \vec{l}_2, \vec{l}_3\)</span> = individual angular momenta.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{L}, \hat{l}_i\)</span> are operators; <span class="math notranslate nohighlight">\(L, l_i\)</span> are the corresponding quantum numbers.</p></li>
+<li><p>We assume a light atom and thus neglect the spin-orbit coupling.</p></li>
+</ul>
+<section id="total-orbital-angular-momentum-in-a-many-electron-atom">
+<h2>Total orbital angular momentum in a many-electron atom.<a class="headerlink" href="#total-orbital-angular-momentum-in-a-many-electron-atom" title="Permalink to this heading">#</a></h2>
+<p>Consider an atom with two electrons each with orbital angular momentum <span class="math notranslate nohighlight">\(l_1\)</span> and <span class="math notranslate nohighlight">\(l_2\)</span>, respectively. The maximum total angular momentum is obtained when the two angular momenta vectors are parallel: <span class="math notranslate nohighlight">\(L = l_1 + l_2\)</span>. When they point in opposite directions, we have: <span class="math notranslate nohighlight">\(L = l_1 - l_2\)</span>.</p>
+<p>Hence the total angular momentum quantum number <span class="math notranslate nohighlight">\(L\)</span> can take values (``Glebsch-Gordan series’’):</p>
+<div class="math notranslate nohighlight">
+\[{L = l_1 + l_2, l_1 + l_2 - 1, ..., \left|l_1 - l_2\right|}\]</div>
+<p>where <span class="math notranslate nohighlight">\(l_1\)</span> and <span class="math notranslate nohighlight">\(l_2\)</span> are the angular momentum quantum numbers for electrons 1 and 2, respectively. For example, if we have two electrons on <span class="math notranslate nohighlight">\(p\)</span>-orbitals, the above gives: <span class="math notranslate nohighlight">\(L = 2, 1\)</span> or <span class="math notranslate nohighlight">\(0\)</span>. Furthermore, for <span class="math notranslate nohighlight">\(L = 2\)</span>, we can have <span class="math notranslate nohighlight">\(M_L = +2, +1, 0, -1, -2\)</span>; for <span class="math notranslate nohighlight">\(L = 1\)</span>, <span class="math notranslate nohighlight">\(M_L = +1, 0, -1\)</span>; and <span class="math notranslate nohighlight">\(L = 0\)</span>, <span class="math notranslate nohighlight">\(M_L = 0\)</span>. It is instructive to check that we actually have the same number of states in both representations (i.e., the uncoupled vs. the coupled representation). In the uncoupled representation: <span class="math notranslate nohighlight">\(3^2 = 9\)</span> states (3 <span class="math notranslate nohighlight">\(p\)</span>-orbitals and 2 electrons) and in the coupled 5 + 3 + 1 = 9.</p>
+<ul class="simple">
+<li><p>Usually closed shell inner core electrons are not included in the consideration as they don’t contribute to the end result.</p></li>
+</ul>
+</section>
+<section id="total-spin-angular-momentum-in-many-electron-atom">
+<h2>Total spin angular momentum in many-electron atom.<a class="headerlink" href="#total-spin-angular-momentum-in-many-electron-atom" title="Permalink to this heading">#</a></h2>
+<p>The total spin angular momentum operator for a many-electron atom is given by:</p>
+<div class="math notranslate nohighlight">
+\[{\hat{S} = \sum\limits_{i=1}^{N}\hat{s}_i}\]</div>
+<p>and the <span class="math notranslate nohighlight">\(z\)</span>-component of the total spin angular momentum operator is defined as:</p>
+<div class="math notranslate nohighlight">
+\[{\hat{S}_z = \sum\limits_{i=1}^{N}\hat{s}_{z,i}}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\hat{s}_i\)</span> and <span class="math notranslate nohighlight">\(\hat{s}_{z,i}\)</span> refer to spin angular momenta of the individual electrons. In similar fashion to (\ref{eq10.98}), total quantum number <span class="math notranslate nohighlight">\(M_S\)</span> can be written:</p>
+<div class="math notranslate nohighlight">
+\[{M_S = \sum\limits_{i=1}^{N} m_{s,i}}\]</div>
+<p>This value can range from <span class="math notranslate nohighlight">\(-S\)</span> to <span class="math notranslate nohighlight">\(S\)</span> and the total quantum number <span class="math notranslate nohighlight">\(S\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[{S = s_1 + s_2, s_1 + s_2 - 1, ..., \left|s_1 - s_2\right|}\]</div>
+<p>For example, for two electrons, <span class="math notranslate nohighlight">\(S = 1\)</span> (<code class="docutils literal notranslate"><span class="pre">triplet</span> <span class="pre">state'')</span> <span class="pre">or</span> <span class="pre">$S</span> <span class="pre">=</span> <span class="pre">0$</span> <span class="pre">(</span></code>singlet state’’).</p>
+</section>
+<section id="the-total-angular-momentum-combined-orbital-and-spin">
+<h2>The total angular momentum (combined orbital and spin).<a class="headerlink" href="#the-total-angular-momentum-combined-orbital-and-spin" title="Permalink to this heading">#</a></h2>
+<p>The total angular momentum operator<span class="math notranslate nohighlight">\(\hat{J}\)</span>, is as a vector sum of <span class="math notranslate nohighlight">\(\hat{L}\)</span> and <span class="math notranslate nohighlight">\(\hat{S}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[{\vec{\hat{J}} = \vec{\hat{L}} + \vec{\hat{S}}}\]</div>
+<div class="math notranslate nohighlight">
+\[{\hat{J}_z = \hat{L}_z + \hat{S}_z}\]</div>
+<p>The total quantum number <span class="math notranslate nohighlight">\(J\)</span> is given by:</p>
+<div class="math notranslate nohighlight">
+\[{J = L + S, L + S - 1, ..., \left|L - S\right|}\]</div>
+<p>with the corresponding total magnetic quantum number <span class="math notranslate nohighlight">\(M_J\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[{M_J = M_L + M_S}\]</div>
+<p>The previous coupling scheme is called the <span class="math notranslate nohighlight">\(LS\)</span> coupling or Russell-Saunders coupling. This approach is only approximate when spin-orbit coupling is included in the Hamiltonian. Spin-orbit interaction arises from relativistic effects and its origin is not considered here. Instead, it should be simply thought to couple the orbital and spin angular momenta to each other with some given magnitude (``spin-orbit coupling constant’’). Note that the spin-orbit effect is larger for heavier atoms. For these atoms the <span class="math notranslate nohighlight">\(LS\)</span> coupling scheme begins to break down and only <span class="math notranslate nohighlight">\(J\)</span> remains a good quantum number. This means that, for example, one can no longer speak about singlet and triplet electronic states. The <span class="math notranslate nohighlight">\(LS\)</span> coupling scheme works reasonably well for the first two rows in the periodic table.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "Weitheskmt/QuantumChemistry",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ch07"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="note02.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pauli exclusion principle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="note04.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Atomic terms and selection rules</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-orbital-angular-momentum-in-a-many-electron-atom">Total orbital angular momentum in a many-electron atom.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#total-spin-angular-momentum-in-many-electron-atom">Total spin angular momentum in many-electron atom.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-total-angular-momentum-combined-orbital-and-spin">The total angular momentum (combined orbital and spin).</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Davit Potoyan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
